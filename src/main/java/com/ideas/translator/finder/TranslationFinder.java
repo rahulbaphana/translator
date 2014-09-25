@@ -38,14 +38,14 @@ public class TranslationFinder {
 
     public File createMissingFile(List<String> missingTranslationKeys, String localeCode) throws IOException {
         String missingKeysFile = "C:\\Tetris\\pacman\\translator\\src\\test\\java\\resources_g3\\shared_To_Translate_" + localeCode + ".properties";
-        File file = new File(missingKeysFile);
-        file.createNewFile();
+        File missingFile = new File(missingKeysFile);
+        missingFile.createNewFile();
         FileWriter fileWriter = new FileWriter(missingKeysFile);
         for (String missingTranslationKey : missingTranslationKeys) {
             fileWriter.write(missingTranslationKey);
             fileWriter.write("\n");
         }
         fileWriter.close();
-        return file;
+        return missingFile;
     }
 }
